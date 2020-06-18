@@ -3,3 +3,8 @@
     height: 5vh;
     background-color: rgb(51,62,76);
 }
+@media(min-width: 768px){
+    .footer{
+        height: 200px;
+    }
+}

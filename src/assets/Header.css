@@ -3,3 +3,8 @@
     height: 10vh;
     background-color: rgb(31,58,157);
 }
+@media(min-width: 768px){
+    .header{
+        height: 15vh;
+    }
+}

@@ -8,14 +8,52 @@ export default class MyForm extends React.Component {
     hwNo: "",
     title: "",
     deadline: "",
+
+    subjectCodeError: false,
+    hwNoError: false,
+    titleError: false,
+    deadlineError: false,
   }
 
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
   }
 
-  handleClick = () => {
-    console.log(this.state);
+  validate(){
+    const initialError = {
+      subjectCodeError: false,
+      hwNoError: false,
+      titleError: false,
+      deadlineError: false,
+    }
+    
+    this.setState(initialError);
+
+    if(this.state.subjectCode && this.state.hwNo && this.state.title && this.state.deadline){
+      return true;
+    }else{
+      if(!this.state.subjectCode){
+        this.setState({subjectCodeError: true});
+      }
+      if(!this.state.hwNo){
+        this.setState({hwNoError: true});
+      }
+      if(!this.state.title){
+        this.setState({titleError: true});
+      }
+      if(!this.state.deadline){
+        this.setState({deadlineError: true});
+      }
+      return false;
+    }
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const isValid = this.validate();
+    if(isValid){
+      console.log(this.state);
+    }
   }
 
   render(){
@@ -26,6 +64,9 @@ export default class MyForm extends React.Component {
             <h1><span className="bd-left"></span>課題登録</h1>
             <label htmlFor="subjectCode">
               <span className="label">科目記号</span>
+              {this.state.subjectCodeError ? (
+                <span className="error-mesg">&#042;選択してください</span>
+                ) : null}
               <select 
                 id="subjectCode"
                 name="subjectCode" 
@@ -39,6 +80,9 @@ export default class MyForm extends React.Component {
             </label>
             <label htmlFor="hwNo">
               <span className="label">課題No.</span>
+              {this.state.hwNoError ? (
+                <span className="error-mesg">&#042;入力してください</span>
+                ) : null}
               <input 
                 id="hwNo"
                 type="number" 
@@ -48,6 +92,9 @@ export default class MyForm extends React.Component {
             </label>
             <label htmlFor="title">
               <span className="label">課題主題</span>
+              {this.state.titleError ? (
+                <span className="error-mesg">&#042;入力してください</span>
+                ) : null}
               <input 
                 id="title"
                 type="text" 
@@ -57,6 +104,9 @@ export default class MyForm extends React.Component {
             </label>
             <label htmlFor="deadline">
               <span className="label">納期</span>
+              {this.state.deadlineError ? (
+                <span className="error-mesg">&#042;選択してください</span>
+                ) : null}
               <input
                 id="deadline"
                 type="date" 
@@ -64,7 +114,7 @@ export default class MyForm extends React.Component {
                 value={this.state.deadline}
                 onChange={this.handleChange} />
             </label>
-            <button className="btn" onClick={this.handleClick}>登録</button>
+            <button className="btn" onClick={this.handleSubmit}>登録</button>
           </div>
         </div>
       </div>

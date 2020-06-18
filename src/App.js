@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './assets/reset.css';
 import './App.css';
 import Header from './components/Header';
 import MyForm from './components/MyForm';

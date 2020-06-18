@@ -70,6 +70,10 @@
     background: rgba(34,50,84,0.03);
 }
 
+.input-page *:focus{
+    border: solid 1px rgb(31,58,157);
+}
+
 .input-page .btn{
     display: block;
     width: 100%;

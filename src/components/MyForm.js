@@ -88,7 +88,9 @@ export default class MyForm extends React.Component {
                 type="number" 
                 name="hwNo" 
                 value={this.state.hwNo} 
-                onChange={this.handleChange} />
+                onChange={this.handleChange}
+                min="1"
+                max="40" />
             </label>
             <label htmlFor="title">
               <span className="label">課題主題</span>
@@ -100,7 +102,8 @@ export default class MyForm extends React.Component {
                 type="text" 
                 name="title" 
                 value={this.state.title} 
-                onChange={this.handleChange} />
+                onChange={this.handleChange}
+                maxLength="100" />
             </label>
             <label htmlFor="deadline">
               <span className="label">納期</span>

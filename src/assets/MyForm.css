@@ -14,7 +14,7 @@
     transform : translate(-50%,-50%);
     
     width: 80vw;
-    height: 67vh;
+    height: 70vh;
     margin: 0 auto;
     border-radius: 10px 10px;
     background-color: #fff;
@@ -43,20 +43,19 @@
     border-left: solid 3px rgb(31,58,157);
 }
 
-.input-page label {
-    display: block;
+.input-page .input-item{
     position: relative;
     width: 100%;
     margin: 10px 0;
 }
 
-.input-page label .label {
+.input-page .label {
     font-size: 12px;
     padding-left: 0.5rem;
     color: #9098a9;
 }
 
-.input-page label input, select{
+.input-page input, select{
     font-family: inherit;
     width: 100%;
     padding: 5px 5px;
@@ -66,14 +65,21 @@
     box-sizing: border-box;
 }
 
-.input-page label input[type="checkbox"]{
+.input-page input[type="checkbox"]{
     -webkit-appearance: checkbox;
     -moz-appearance: checkbox;
     width: 1rem;
     margin-left: 1rem;
 }
 
-.input-page label input:hover, select:hover {
+.input-page input[type="radio"]{
+    -webkit-appearance: radio;
+    -moz-appearance: radio;
+    width: 1rem;
+    margin-left: 1rem;
+}
+
+.input-page input:hover, select:hover {
     background: rgba(34,50,84,0.03);
 }
 
@@ -85,7 +91,7 @@
     display: block;
     width: 100%;
     height: fit-content;
-    margin: 0 auto;
+    margin: 1rem auto 0 auto;
     border-radius: 10px 10px;
     color: #fff;
     background-color: rgb(31,58,157); /*#1F3A9D*/

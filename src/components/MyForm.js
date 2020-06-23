@@ -8,6 +8,7 @@ export default class MyForm extends React.Component {
     hwNo: "",
     title: "",
     deadline: "",
+    toServer: false,
 
     subjectCodeError: false,
     hwNoError: false,
@@ -116,6 +117,15 @@ export default class MyForm extends React.Component {
                 name="deadline"
                 value={this.state.deadline}
                 onChange={this.handleChange} />
+            </label>
+            <label htmlFor="toServer">
+                <span className="label">サーバー提出</span>
+                <input
+                id="toServer"
+                type="checkbox"
+                name="toServer"
+                value="1"
+                /> あり
             </label>
             <button className="btn" onClick={this.handleSubmit}>登録</button>
           </div>

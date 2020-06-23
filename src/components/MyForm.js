@@ -63,11 +63,14 @@ export default class MyForm extends React.Component {
         <div className="wrap">
           <div className="container">
             <h1><span className="bd-left"></span>課題登録</h1>
-            <label htmlFor="subjectCode">
-              <span className="label">科目記号</span>
-              {this.state.subjectCodeError ? (
-                <span className="error-mesg">&#042;選択してください</span>
-                ) : null}
+
+            <div className="input-item">
+              <label htmlFor="subjectCode">
+                <span className="label">科目記号</span>
+                {this.state.subjectCodeError ? (
+                  <span className="error-mesg">&#042;選択してください</span>
+                  ) : null}
+              </label>
               <select 
                 id="subjectCode"
                 name="subjectCode" 
@@ -78,12 +81,15 @@ export default class MyForm extends React.Component {
                 <option value="SD25">SD25</option>
                 <option value="DB25">DB25</option>
               </select>
-            </label>
-            <label htmlFor="hwNo">
-              <span className="label">課題No.</span>
-              {this.state.hwNoError ? (
-                <span className="error-mesg">&#042;入力してください</span>
-                ) : null}
+            </div>
+
+            <div className="input-item">
+              <label htmlFor="hwNo">
+                <span className="label">課題No.</span>
+                {this.state.hwNoError ? (
+                  <span className="error-mesg">&#042;入力してください</span>
+                  ) : null}
+              </label>
               <input 
                 id="hwNo"
                 type="number" 
@@ -92,12 +98,15 @@ export default class MyForm extends React.Component {
                 onChange={this.handleChange}
                 min="1"
                 max="40" />
-            </label>
-            <label htmlFor="title">
-              <span className="label">課題主題</span>
-              {this.state.titleError ? (
-                <span className="error-mesg">&#042;入力してください</span>
-                ) : null}
+            </div>
+
+            <div className="input-item">
+              <label htmlFor="title">
+                <span className="label">課題主題</span>
+                {this.state.titleError ? (
+                  <span className="error-mesg">&#042;入力してください</span>
+                  ) : null}
+              </label>
               <input 
                 id="title"
                 type="text" 
@@ -105,28 +114,55 @@ export default class MyForm extends React.Component {
                 value={this.state.title} 
                 onChange={this.handleChange}
                 maxLength="100" />
-            </label>
-            <label htmlFor="deadline">
-              <span className="label">納期</span>
-              {this.state.deadlineError ? (
-                <span className="error-mesg">&#042;選択してください</span>
-                ) : null}
+            </div>
+
+            <div className="input-item">
+              <label htmlFor="deadline">
+                <span className="label">納期</span>
+                {this.state.deadlineError ? (
+                  <span className="error-mesg">&#042;選択してください</span>
+                  ) : null}
+              </label>
               <input
                 id="deadline"
                 type="date" 
                 name="deadline"
                 value={this.state.deadline}
                 onChange={this.handleChange} />
-            </label>
-            <label htmlFor="toServer">
-                <span className="label">サーバー提出</span>
-                <input
-                id="toServer"
-                type="checkbox"
-                name="toServer"
-                value="1"
-                /> あり
-            </label>
+            </div>
+
+            <div className="input-item">
+              <span className="label">課題種類</span>
+              <label htmlFor="jobtype1">
+                  <input
+                  id="jobtype1"
+                  type="radio"
+                  name="jobtype"
+                  value="0"
+                  />訓練
+              </label>
+              <label htmlFor="jobtype2">
+                  <input
+                  id="jobtype2"
+                  type="radio"
+                  name="jobtype"
+                  value="1"
+                  />評価
+              </label>
+            </div>
+
+            <div className="input-item">
+              <span className="label">サーバー提出</span>
+              <label htmlFor="toServer">
+                  <input
+                  id="toServer"
+                  type="checkbox"
+                  name="toServer"
+                  value="1"
+                  /> あり
+              </label>
+            </div>
+            
             <button className="btn" onClick={this.handleSubmit}>登録</button>
           </div>
         </div>

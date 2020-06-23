@@ -14,7 +14,7 @@
     transform : translate(-50%,-50%);
     
     width: 80vw;
-    height: 62vh;
+    height: 67vh;
     margin: 0 auto;
     border-radius: 10px 10px;
     background-color: #fff;
@@ -64,6 +64,13 @@
     border-radius: 10px 10px;
     background: none;
     box-sizing: border-box;
+}
+
+.input-page label input[type="checkbox"]{
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    width: 1rem;
+    margin-left: 1rem;
 }
 
 .input-page label input:hover, select:hover {
